@@ -4,6 +4,7 @@ import signal
 import re
 from os import path
 import json
+import webbrowser
 
 process = None  # global var to hold carbon server process
 colourMap = {"unknownLine": 6,
@@ -28,6 +29,10 @@ def processLine(line):
         processException(line)
     else:
         cPrint('unknownLine', line)
+    if "Mgt Console URL" in line:
+        line = line.rstrip()
+        idx = line.find(":",100) #find index of server URL
+        openBrowserWindow(line[idx+2:])
 
 
 def processException(line):
@@ -96,6 +101,10 @@ def handler(signum=None, frame=None):
     for line in iter(process.stdout.readline, ''):
         processLine(line)
     sys.exit(0)
+
+def openBrowserWindow(url):
+    new = 2 # open in a new tab, if possible
+    webbrowser.open(url,new=new)
 
 ########## Signal hooks ###########
 
