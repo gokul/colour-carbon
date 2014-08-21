@@ -46,7 +46,7 @@ then you will be able to run colour carbon by just typeing rr inside product hom
 ## Roadmap
 
 * start runing form any dirctory in product
-* auto open browser when server starts up
+* ~~auto open browser when server starts up~~
 * adding support to OSGi console mode
 * support viewing log files
 * adding a config file to change colours ect.
