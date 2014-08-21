@@ -3,6 +3,8 @@ colour-carbon
 
 *colour-carbon is a wrapper around wso2 carbon command line output to add a bit of colour in 256 colour linux terminals*
 
+NEW: Now supports auto-opening of the management console in a new browser tab.
+
 ## Prerequisites
 
 * python 2.x
